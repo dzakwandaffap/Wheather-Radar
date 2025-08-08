@@ -4,20 +4,20 @@ const API_KEY = "ac9d21f60ea5a2b193883ac1cfb90618";
 const WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 // Icon components
-const SearchIcon = () => (
-  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
-  </svg>
-);
+// const SearchIcon = () => (
+//   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+//   </svg>
+// );
 
 const CloudIcon = () => (
-  <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg className="w-22 h-18" fill="none" stroke="currentColor" viewBox="0 0 24 20">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
   </svg>
 );
 
 const DropletsIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24 ">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7.5 14.25c0-1.243 1.007-2.25 2.25-2.25S12 13.007 12 14.25s-1.007 2.25-2.25 2.25-2.25-1.007-2.25-2.25zM10.29 2.098l5.573 8.359A9 9 0 1110.29 2.098zM6.75 18a2.25 2.25 0 004.5 0" />
   </svg>
 );
@@ -106,12 +106,12 @@ export default function WeatherPage() {
         <div className="mb-8">
           <div className="w-full flex gap-4">
             <div className="relative flex-1">
-              <div className="absolute inset-y-0 left-0 pl-4 pointer-events-none text-gray-400">
+              {/* <div className="absolute inset-y-0 left-0 pl-4 pointer-events-none text-gray-400">
                 <SearchIcon />
-              </div>
+              </div> */}
               <input
                 type="text"
-                placeholder="Enter city name (e.g., Jakarta, London, Tokyo)"
+                placeholder="Search for a place that you want to know the weather"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 onKeyPress={handleKeyPress}
@@ -273,9 +273,9 @@ export default function WeatherPage() {
                   <CloudIcon />
                 </div>
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: '#393E46' }}>
-                  Ready to Check Weather
+                  Wheater Radar
                 </h3>
-                <p className="text-gray-600">Enter a city name in the search box above to get started</p>
+                <h3 className="text-gray-600">Search For Place That You Want To Know The Weather!</h3>
               </div>
             </div>
           </div>
