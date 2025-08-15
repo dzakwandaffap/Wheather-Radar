@@ -95,7 +95,7 @@ export default function WeatherPage() {
     <div className="p-6 bg-gray-100 min-h-screen w-screen flex flex-col items-center">
       <div className="w-full max-w-4xl">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-12 mt-8 ">
           <h1 className="text-4xl font-bold mb-2" style={{ color: '#393E46' }}>
             Weather App
           </h1>
@@ -103,30 +103,45 @@ export default function WeatherPage() {
         </div>
 
         {/* Search Section */}
-        <div className="mb-8">
+        <div className="mb-8 mt-16">
           <div className="w-full flex gap-4">
-            <div className="relative flex-1">
+            <div className="relative flex-1 ">
               {/* <div className="absolute inset-y-0 left-0 pl-4 pointer-events-none text-gray-400">
                 <SearchIcon />
               </div> */}
               <input
                 type="text"
-                placeholder="Search for a place that you want to know the weather"
+                placeholder="Type Here!"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="block w-full pl-12 pr-4 py-4 bg-white border-2 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-opacity-50 shadow-sm transition-all"
+                className="block w-full pl-12 pr-4 py-4 bg-white border-2  rounded-4xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-opacity-50 shadow-sm transition-all"
                 style={{ borderColor: '#393E46' }}
               />
             </div>
-            <button
-              onClick={getWeather}
-              disabled={loading || !city.trim()}
-              className="px-8 py-4 bg-white border-2 rounded-xl font-semibold text-white transition-all hover:opacity-90 disabled:opacity-50"
-              style={{ backgroundColor: '#393E46', borderColor: '#393E46' }}
-            >
-              {loading ? "Loading..." : "Search"}
-            </button>
+          <button
+                onClick={getWeather}
+                disabled={loading || !city.trim()}
+                className="right-2 top-2 bottom-2 px-8 text-white font-semibold transition-all duration-300 disabled:opacity-50 hover: hover:scale-100 active:scale-95"
+                style={{
+                  backgroundColor: '#434e56ff',
+                  borderRadius: '32px',
+                  borderWidth: '0px',
+                  fontFamily: 'Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+                  fontWeight: '600',
+                  letterSpacing: '1px',
+                  lineHeight: '12px',
+                  paddingBlock: '14px',
+                  paddingInline: '34px',
+                  textTransform: 'uppercase'
+                }}
+              >
+                {loading ? (
+                  <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  "Search"
+                )}
+              </button>
           </div>
         </div>
 
@@ -267,12 +282,12 @@ export default function WeatherPage() {
         {/* Initial State */}
         {!weatherData && !loading && !error && (
           <div className="mb-8">
-            <div className="bg-white rounded-2xl shadow-lg p-12 w-full" style={{ border: '1px solid #393E46' }}>
+            <div className="bg-white  shadow-lg p-12 w-full mt-24 sty" style={{ border: '4px solid #393e46b1', borderRadius: '5rem' }} >
               <div className="text-center">
-                <div className="mb-6 flex justify-center" style={{ color: '#393E46' }}>
+                <div className="mb-6 flex justify-center" style={{ color:  '  #393e46d4' }}>
                   <CloudIcon />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4" style={{ color: '#393E46' }}>
+                <h3 className="text-4xl font-semibold mb-4" style={{ color: '#393E46' }}>
                   Wheater Radar
                 </h3>
                 <h3 className="text-gray-600">Search For Place That You Want To Know The Weather!</h3>
